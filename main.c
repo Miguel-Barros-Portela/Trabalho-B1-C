@@ -16,9 +16,25 @@ double frete(double km) {
     }
     return ValorFrete;
 }
+
+
+double AdicionalPeso(double peso, double adicional){
+        if (peso > 2 && peso <= 5){
+            adicional = adicional*0.05;
+        }else if (peso > 5 && peso <= 10){
+                    adicional = adicional*0.1;        
+        }else if (peso > 10){
+                    adicional = adicional*0.2;  
+        }
+            
+        
+        
+    return adicional;    
+}
+
 int main() {
     
-    double distancia = 0;
+    double distancia = 0, peso = 0, totfrete = 0, totpeso = 0;
 
     printf("---Simulador de Solicitacoes---\n");
     printf("Digite a distancia em KM: ");
@@ -26,8 +42,21 @@ int main() {
 
     if (distancia > 0){
             printf("Valor do frete: R$ %.2f\n", frete(distancia));
+            totfrete = frete(distancia);
     }else{
         printf("Digite uma distancia valida!\n");
+        return 0;
+    }
+
+    printf("Digite o peso do produto: KG ");
+    scanf("%lf", &peso);
+    
+    if(peso > 0){
+        printf("Valor do adicional de peso: R$ %.2f\n", AdicionalPeso(peso,totfrete));
+        totpeso = AdicionalPeso(peso,totfrete);
+    }else{
+        printf("Digite um peso valido!");
+        return 0;
     }
    
     
