@@ -110,13 +110,14 @@ int main() {
         
         
     } while (seguro < 1 || seguro > 2);
+
     
     printf("Digite o numero de tentativas de entregas adicionais que deseja\n Digite 0 se nao deseja\n");
     scanf("%d", &numentrega);
     if (numentrega > 0){
         totextra = numentrega*4;
-        printf("O numero de entregas extras contratado:%f\n", numentrega);
-        printf("O valor das entrgas extras: R$ %.2f\n", totextra);
+        printf("O numero de entregas extras contratado: %d\n", numentrega);
+        printf("O valor das entregas extras: R$ %.2f\n", totextra);
     }else{
         printf("Sem temtativas extras de entrega!");
     }
