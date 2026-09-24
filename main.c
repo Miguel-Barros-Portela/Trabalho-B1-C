@@ -118,7 +118,7 @@ int main() {
         printf("O numero de entregas extras contratado:%f\n", numentrega);
         printf("O valor das entrgas extras: R$ %.2f\n", totextra);
     }else{
-        printf("Sem temtativas extras de entrega");
+        printf("Sem temtativas extras de entrega!");
     }
     
 
