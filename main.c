@@ -56,8 +56,8 @@ return valorInicial;
 
 int main() {
     
-    double distancia = 0, peso = 0, totfrete = 0, totpeso = 0, totmodalidade = 0, totTotal = 0, totseguro = 0;
-    int opcao = 0, seguro = 0;
+    double distancia = 0, peso = 0, totfrete = 0, totpeso = 0, totmodalidade = 0, totTotal = 0, totseguro = 0, totextra = 0;
+    int opcao = 0, seguro = 0, numentrega = 0;
 
     printf("---Simulador de Solicitacoes---\n");
     printf("Digite a distancia em KM: ");
@@ -111,7 +111,15 @@ int main() {
         
     } while (seguro < 1 || seguro > 2);
     
-        
+    printf("Digite o numero de tentativas de entregas adicionais que deseja\n Digite 0 se nao deseja\n");
+    scanf("%d", &numentrega);
+    if (numentrega > 0){
+        totextra = numentrega*4;
+        printf("O numero de entregas extras contratado:%f\n", numentrega);
+        printf("O valor das entrgas extras: R$ %.2f\n", totextra);
+    }else{
+        printf("Sem temtativas extras de entrega");
+    }
     
 
 

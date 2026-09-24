@@ -8,3 +8,5 @@
  - Cálcular o valor da modalidade do frete.
 
  - Contratar serviço adicional de proteção.
+
+ - Contratar tentativas extras de entrega.
