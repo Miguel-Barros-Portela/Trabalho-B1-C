@@ -5,4 +5,4 @@
 
  - Cálculo do valor do adicional de peso do produto.
 
- - Cálcular Frete.
+ - Cálcular o valor da modalidade do frete.

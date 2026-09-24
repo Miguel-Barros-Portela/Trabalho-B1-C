@@ -32,9 +32,30 @@ double AdicionalPeso(double peso, double adicional){
     return adicional;    
 }
 
+double ModalidadeFrete(int tipo, double valorInicial){
+
+    switch (tipo){
+        case 1:
+            valorInicial = valorInicial * 0;
+            break;
+        case 2:
+            valorInicial = valorInicial * 0.15;
+            break;
+        case 3:
+            valorInicial = valorInicial * 0.30;
+            break;
+    default:
+        break;
+    }
+return valorInicial;
+}
+
+
+
 int main() {
     
-    double distancia = 0, peso = 0, totfrete = 0, totpeso = 0;
+    double distancia = 0, peso = 0, totfrete = 0, totpeso = 0, totmodalidade = 0, totTotal = 0;
+    int opcao = 0;
 
     printf("---Simulador de Solicitacoes---\n");
     printf("Digite a distancia em KM: ");
@@ -58,9 +79,18 @@ int main() {
         printf("Digite um peso valido!");
         return 0;
     }
-   
     
-    
+    do {
+        printf("\nEscolha a modalidade:\n1 - Economica\n2 - Expressa\n3 - Prioritaria\nOpcao: ");
+        scanf("%d", &opcao); 
+
+        if (opcao < 1 || opcao > 3) {
+            printf("\nOpcao invalida! Digite apenas 1, 2 ou 3.\n");
+        }
+    } while (opcao < 1 || opcao > 3); 
+
+    totmodalidade = ModalidadeFrete(opcao, totfrete);
+    printf("Valor do adicional de modalidade: R$ %.2f\n", totmodalidade);
 
     return 0;
 }
