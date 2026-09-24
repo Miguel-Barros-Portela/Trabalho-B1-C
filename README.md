@@ -7,4 +7,4 @@
 
  - Cálcular o valor da modalidade do frete.
 
- -Contratar serviço adicional de proteção.
+ - Contratar serviço adicional de proteção.
