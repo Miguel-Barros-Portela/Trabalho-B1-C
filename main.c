@@ -45,6 +45,21 @@ double ModalidadeFrete(int tipo, double valorInicial) {
     return valorInicial;
 }
 
+int ValidaSeguro(int s){
+    double valseg;
+        if (s == 1) {
+                printf("Seguro contratado no valor de R$ 7.50\n");
+                valseg = 7.50;
+            } else if (s == 2) {
+                printf("Seguro nao contratado!\n");
+                valseg = 0;
+            } else {
+                printf("Digite um numero valido!!\n");
+            }
+
+    return 0;
+}
+
 int main() {
     double distancia = 0, peso = 0, totfrete = 0, totpeso = 0, totmodalidade = 0;
     double totTotal = 0, totseguro = 0, totextra = 0, maiorValor = 0, menorValor = 0;
@@ -96,15 +111,7 @@ int main() {
         do {
             printf("\nDeseja contratar servico adicional de protecao no valor de R$ 7.50?\n1 - Contratar\n2 - Nao contratar\nOpcao: ");
             scanf("%d", &seguro);
-            if (seguro == 1) {
-                printf("Seguro contratado no valor de R$ 7.50\n");
-                totseguro = 7.50;
-            } else if (seguro == 2) {
-                printf("Seguro nao contratado!\n");
-                totseguro = 0;
-            } else {
-                printf("Digite um numero valido!!\n");
-            }
+            totseguro = ValidaSeguro(seguro);
         } while (seguro < 1 || seguro > 2);
 
         printf("\nDigite o numero de tentativas de entregas adicionais que deseja (0 se nao deseja): ");
