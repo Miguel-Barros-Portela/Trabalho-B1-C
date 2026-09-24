@@ -19,7 +19,9 @@ double frete(double km) {
 
 
 double AdicionalPeso(double peso, double adicional){
-        if (peso > 2 && peso <= 5){
+        if(peso <= 2){
+            adicional = adicional*0;
+        }else if (peso > 2 && peso <= 5){
             adicional = adicional*0.05;
         }else if (peso > 5 && peso <= 10){
                     adicional = adicional*0.1;        
@@ -102,10 +104,12 @@ int main() {
         }else if (seguro == 2){
             printf("Seguro nao contratado!\n");
             totseguro = 0;
+        }else{
+            printf("Digite um numero valido!!\n");
         }
         
         
-    } while (seguro < 1 && seguro >2);
+    } while (seguro < 1 || seguro > 2);
     
         
     
