@@ -54,8 +54,8 @@ return valorInicial;
 
 int main() {
     
-    double distancia = 0, peso = 0, totfrete = 0, totpeso = 0, totmodalidade = 0, totTotal = 0;
-    int opcao = 0;
+    double distancia = 0, peso = 0, totfrete = 0, totpeso = 0, totmodalidade = 0, totTotal = 0, totseguro = 0;
+    int opcao = 0, seguro = 0;
 
     printf("---Simulador de Solicitacoes---\n");
     printf("Digite a distancia em KM: ");
@@ -91,6 +91,25 @@ int main() {
 
     totmodalidade = ModalidadeFrete(opcao, totfrete);
     printf("Valor do adicional de modalidade: R$ %.2f\n", totmodalidade);
+
+    do
+    {
+        printf("Deseja contratar servico adicional de protecao no valor de R$ 7.50? \n 1 - contratar \n 2 - nao contratar \n");
+        scanf("%d", &seguro);
+        if (seguro == 1){
+            printf("Seguro contratado no valor de R$ 7.50\n");
+            totseguro = 7.50;
+        }else if (seguro == 2){
+            printf("Seguro nao contratado!\n");
+            totseguro = 0;
+        }
+        
+        
+    } while (seguro < 1 && seguro >2);
+    
+        
+    
+
 
     return 0;
 }

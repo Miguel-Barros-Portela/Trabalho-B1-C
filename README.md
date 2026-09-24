@@ -6,3 +6,5 @@
  - Cálculo do valor do adicional de peso do produto.
 
  - Cálcular o valor da modalidade do frete.
+
+ -Contratar serviço adicional de proteção.
